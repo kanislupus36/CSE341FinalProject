@@ -38,10 +38,10 @@ const createStudent = async (req, res) => {
     try {
       const { firstName, lastName, email, birthday, studentID, gradDate } = req.body;
   
-    //   // Input validation
-    //   if (!firstName || !lastName || !email || !birthday || !studentID || !gradDate) {
-    //     return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email, birthday, studentID, gradDate' });
-    //   }
+      // Input validation
+      if (!firstName || !lastName || !email || !birthday || !studentID || !gradDate) {
+        return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email, birthday, studentID, gradDate' });
+      }
   
       const student = { firstName, lastName, email, birthday, studentID, gradDate };
       const response = await mongodb.getDatabase().db('FinalProject').collection('student').insertOne(student);
@@ -65,10 +65,10 @@ const createStudent = async (req, res) => {
   
       const { firstName, lastName, email, birthday, studentID, gradDate } = req.body;
   
-    //   // Input validation
-    //   if (!firstName || !lastName || !email || !birthday || !studentID || !gradDate) {
-    //     return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email, birthday, studentID, gradDate' });
-    //   }
+      // Input validation
+      if (!firstName || !lastName || !email || !birthday || !studentID || !gradDate) {
+        return res.status(400).json({ error: 'Missing required fields: firstName, lastName, email, birthday, studentID, gradDate' });
+      }
   
       const student = { firstName, lastName, email, birthday, studentID, gradDate };
       const response = await mongodb.getDatabase().db('FinalProject').collection('student').replaceOne({ _id: new ObjectId(studentId) }, student);
