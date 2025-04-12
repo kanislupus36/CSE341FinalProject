@@ -75,7 +75,7 @@ const createCourse = async (req, res) => {
       }
   
       const course = { title, courseID, credits, location };
-      const response = await mongodb.getDatabase().db('FinalProject').collection('course').replaceOne({ _id: new ObjectId(courseID) }, course);
+      const response = await mongodb.getDatabase().db('FinalProject').collection('course').replaceOne({ _id: new ObjectId(courseId) }, course);
   
       if (response.modifiedCount > 0) {
         res.status(200).json({ message: 'Course updated successfully' });
