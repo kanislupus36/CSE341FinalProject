@@ -5,7 +5,7 @@
     "description": "Final Project School Data API",
     "version": "1.0.0"
   },
-  "host": "https://cse341finalproject-s4xs.onrender.com",
+  "host": "cse341finalproject-s4xs.onrender.com",
   "basePath": "/",
   "schemes": [
     "https"
