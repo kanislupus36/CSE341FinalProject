@@ -5,11 +5,11 @@ const controller = require('../controllers/student');
 
 router.use('/', require('./swagger'));
 
-router.get('/student', controller.getAllStudents);
-router.get('/student/:id', controller.getSingleStudent);
-router.post('/student', controller.createStudent);
-router.put('/student/:id', controller.updateStudent);
-router.delete('/student/:id', controller.deleteStudent);
+router.get('/', controller.getAllStudents);
+router.get('/:id', controller.getSingleStudent);
+router.post('/', controller.createStudent);
+router.put('/:id', controller.updateStudent);
+router.delete('/:id', controller.deleteStudent);
 
 // router.get('/login', passport.authenticate('github'), (req, res) => {});
 // router.get('/logout', function(req, res, next) {
