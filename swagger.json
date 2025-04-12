@@ -5,11 +5,10 @@
     "description": "Final Project School Data API",
     "version": "1.0.0"
   },
-  "host": "localhost:3000",
+  "host": "https://cse341finalproject-s4xs.onrender.com",
   "basePath": "/",
   "schemes": [
-    "https",
-    "http"
+    "https"
   ],
   "paths": {
     "/": {
