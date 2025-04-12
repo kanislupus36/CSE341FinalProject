@@ -30,7 +30,7 @@ const getSingleCourse = async (req, res) => {
       return res.status(404).json({ error: 'Course not found' });
     }
     res.setHeader('Content-Type', 'application/json');
-    res.status(200).json(students[0]);
+    res.status(200).json(courses[0]);
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch the Course', details: err.message });
   }
