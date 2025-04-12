@@ -31,7 +31,7 @@
         }
       }
     },
-    "/student/student": {
+    "/student/": {
       "get": {
         "description": "",
         "produces": [
@@ -87,7 +87,7 @@
         }
       }
     },
-    "/student/student/{id}": {
+    "/student/{id}": {
       "get": {
         "description": "",
         "produces": [
