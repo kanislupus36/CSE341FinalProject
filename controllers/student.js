@@ -2,9 +2,10 @@ const mongodb = require('../data/database');
 const { ObjectId } = require('mongodb');
 
 // Utility function to validate ObjectId
-//const isValidObjectId = (id) => ObjectId.isValid(id);
+const isValidObjectId = (id) => ObjectId.isValid(id);
 
 const getAllStudents = async (req, res) => {
+  //#swagger.tags=['Student']
   try {
     const result = await mongodb.getDatabase().db('FinalProject').collection('student').find();
     const students = await result.toArray();
@@ -16,11 +17,12 @@ const getAllStudents = async (req, res) => {
 };
 
 const getSingleStudent = async (req, res) => {
+  //#swagger.tags=['Student']
   try {
     const studentId = req.params.id;
-    // if (!isValidObjectId(studentId)) {
-    //   return res.status(400).json({ error: 'Invalid Student ID format' });
-    // }
+    if (!isValidObjectId(studentId)) {
+      return res.status(400).json({ error: 'Invalid Student ID format' });
+    }
 
     const result = await mongodb.getDatabase().db('FinalProject').collection('student').find({ _id: new ObjectId(studentId) });
     const students = await result.toArray();
@@ -35,6 +37,7 @@ const getSingleStudent = async (req, res) => {
 };
 
 const createStudent = async (req, res) => {
+  //#swagger.tags=['Student']
     try {
       const { firstName, lastName, email, birthday, studentID, gradDate } = req.body;
   
@@ -57,11 +60,12 @@ const createStudent = async (req, res) => {
   };
 
   const updateStudent = async (req, res) => {
+    //#swagger.tags=['Student']
     try {
       const studentId = req.params.id;
-    //   if (!isValidObjectId(studentId)) {
-    //     return res.status(400).json({ error: 'Invalid Student ID format' });
-    //   }
+      if (!isValidObjectId(studentId)) {
+        return res.status(400).json({ error: 'Invalid Student ID format' });
+      }
   
       const { firstName, lastName, email, birthday, studentID, gradDate } = req.body;
   
@@ -84,11 +88,12 @@ const createStudent = async (req, res) => {
   };
 
   const deleteStudent = async (req, res) => {
+    //#swagger.tags=['Student']
     try {
       const studentId = req.params.id;
-    //   if (!isValidObjectId(studentId)) {
-    //     return res.status(400).json({ error: 'Invalid Student ID format' });
-    //   }
+      if (!isValidObjectId(studentId)) {
+        return res.status(400).json({ error: 'Invalid Student ID format' });
+      }
   
       const response = await mongodb.getDatabase().db('FinalProject').collection('student').deleteOne({ _id: new ObjectId(studentId) });
   
