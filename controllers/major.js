@@ -46,7 +46,7 @@ const createMajor = async (req, res) => {
         return res.status(400).json({ error: 'Missing required fields: title, creditHours, program' });
       }
   
-      const major = { title, courseID, creditHours, program };
+      const major = { title, creditHours, program };
       const response = await mongodb.getDatabase().db('FinalProject').collection('major').insertOne(major);
   
       if (response.acknowledged) {
