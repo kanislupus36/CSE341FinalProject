@@ -6,6 +6,8 @@ router.get('/', (req, res) => {res.send('Welcome!');});
 
 router.use('/student', require('./student'));
 router.use('/course', require('./course'));
+router.use('/teacher', require('./teacher'));
+router.use('/major', require('./major'));
 
 
 router.get('/login', passport.authenticate('github'), (req, res) => {});
